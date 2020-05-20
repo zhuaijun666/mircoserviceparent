@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: demo-provider
+    qos-enable: false #用于运维的监控服务， 默认是开启状态，并且端口是22222。开发环境为了避免端口冲突，建议直接关掉
+
+  registry:
+    address: zookeeper://172.16.100.197:2181,172.16.100.198:2181,172.16.100.199:2181?client=curator
+  protocol:
+    name: dubbo
+    port: 20880
+soul:
+  dubbo:
+    adminUrl: http://localhost:9095
+    contextPath: /dubboTest
+    appName: dubboTest
